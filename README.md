@@ -20,5 +20,5 @@ References: http://blogs.msdn.com/b/chuckw/archive/2012/04/24/where-s-dxerr-lib.
 2. Include "dxerr.h" and "dxerr.cpp" in Box project (located in Libraries/dxerr/).
 3. In Box project, set project properties. (Include Directories, Library Directories)
 4. Modify code of Line 40, DXTrace function call in "d3dUtil.h": Type of parameter 1 converts to WCHAR* -> (WCHAR*)FILE
-5. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp": Type of parameter 1 converts to WHCHAR* -> (WCHAR*)FILE
+5. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp": Type of parameter 1 converts to WCHAR* -> (WCHAR*)FILE
 6. Compile and build it.
