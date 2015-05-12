@@ -16,17 +16,20 @@ One of the little utility in the DirectX SDK is a static library for converting 
 References: http://blogs.msdn.com/b/chuckw/archive/2012/04/24/where-s-dxerr-lib.aspx
 
 ### Solutions ("Box" Example)
-1. Rebuild .lib (both Debug and Release) according to your Visual Studio version (located in Libraries/Effects11/).
-2. Include "dxerr.h" and "dxerr.cpp" in Box project (located in Libraries/dxerr/).
-3. In Box project, set project properties (Include Directories, Library Directories).
-4. Copy "Libraries/Effects11/inc/d3dx11effect.h", then paste "DirectX 11/Frank D. Luna/Common/d3dx11effect.h". 
-5. Include "d3d11.h" file in "d3dUtil.h".
+1. Rebuild .lib (both Debug and Release) according to your Visual Studio version (located in "Libraries/Effects11/").
+2. Rename "Effects11.lib" of debug version to "Effects11d.lib".
+3. Crop "Effects11d.lib" and "Effects11.lib" in "Libraries/Effects11/Debug/" and "Libraries/Effects11/Release/", then paste it in "DirectX 11/Frank D. Luna/Common/".
+4. Copy "dxerr.h" and "dxerr.cpp" in "Libraries/dxerr/", then paste it in "DirectX 11/Frank D. Luna/Common/".      
+5. Add "dxerr.h" and "dxerr.cpp" to Box project.
+6. In Box project, set project properties (Include Directories, Library Directories).
+7. Copy "d3dx11effect.h" in "Libraries/Effects11/inc/", then paste it in "DirectX 11/Frank D. Luna/Common/". 
+8. Include "d3d11.h" file in "d3dUtil.h".
 
     `#include <d3d11.h>`
-6. Modify code of Line 40, DXTrace function call in "d3dUtil.h".
+9. Modify code of Line 40, DXTrace function call in "d3dUtil.h".
 
     `DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L#x, true);`
-7. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp".
+10. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp".
 
     `DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);`
-8. Compile and build it.
+11. Compile and build it.
