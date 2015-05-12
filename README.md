@@ -22,6 +22,8 @@ References: http://blogs.msdn.com/b/chuckw/archive/2012/04/24/where-s-dxerr-lib.
 4. Copy "dxerr.h" and "dxerr.cpp" in "Libraries/dxerr/", then paste it in "DirectX 11/Frank D. Luna/Common/".      
 5. Add "dxerr.h" and "dxerr.cpp" to Box project.
 6. In Box project, set project properties (Include Directories, Library Directories).
+  - Include Directories: $(IncludePath);`(Absolute Path)`\DirectX 11\Common;$(DXSDK_DIR)Include  
+  - Library Directories: $(LibraryPath);`(Absolute Path)`\DirectX 11\Common;$(DXSDK_DIR)Lib\x86
 7. Copy "d3dx11effect.h" in "Libraries/Effects11/inc/", then paste it in "DirectX 11/Frank D. Luna/Common/". 
 8. Include "d3d11.h" file in "d3dUtil.h".
 
