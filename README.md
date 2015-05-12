@@ -18,14 +18,15 @@ References: http://blogs.msdn.com/b/chuckw/archive/2012/04/24/where-s-dxerr-lib.
 ### Solutions ("Box" Example)
 1. Rebuild .lib (both Debug and Release) according to your Visual Studio version (located in Libraries/Effects11/).
 2. Include "dxerr.h" and "dxerr.cpp" in Box project (located in Libraries/dxerr/).
-3. In Box project, set project properties. (Include Directories, Library Directories)
-4. Include d3d11.h file in "d3dUtil.h".
+3. In Box project, set project properties (Include Directories, Library Directories).
+4. Copy "Libraries/Effects11/inc/d3dx11effect.h", then paste "DirectX 11/Frank D. Luna/Common/d3dx11effect.h". 
+5. Include "d3d11.h" file in "d3dUtil.h".
 
     `#include <d3d11.h>`
-5. Modify code of Line 40, DXTrace function call in "d3dUtil.h".
+6. Modify code of Line 40, DXTrace function call in "d3dUtil.h".
 
     `DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L#x, true);`
-6. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp".
+7. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp".
 
     `DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);`
-7. Compile and build it.
+8. Compile and build it.
