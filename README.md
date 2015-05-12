@@ -16,10 +16,13 @@ One of the little utility in the DirectX SDK is a static library for converting 
 References: http://blogs.msdn.com/b/chuckw/archive/2012/04/24/where-s-dxerr-lib.aspx
 
 ### Solutions ("Box" Example)
-1. Rebuild .lib (both Debug and Release) according to your Visual Studio version (located in Libraries/Effects11).
+1. Rebuild .lib (both Debug and Release) according to your Visual Studio version (located in Libraries/Effects11/).
 2. Include "dxerr.h" and "dxerr.cpp" in Box project (located in Libraries/dxerr/).
 3. In Box project, set project properties. (Include Directories, Library Directories)
-4. Add "#include `<d3d11.h>`" in "d3dUtil.h".
-5. Modify code of Line 40, DXTrace function call in "d3dUtil.h": Type of parameter 1 converts to WCHAR* -> (WCHAR*)`__FILE__`
-6. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp": Type of parameter 1 converts to WCHAR* -> (WCHAR*)`__FILE__`
+4. Include d3d11.h file in "d3dUtil.h".
+    #include <d3d11.h>
+5. Modify code of Line 40, DXTrace function call in "d3dUtil.h".
+    DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L#x, true);
+6. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp".
+    DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);
 7. Compile and build it.
