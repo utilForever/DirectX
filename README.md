@@ -21,11 +21,11 @@ References: http://blogs.msdn.com/b/chuckw/archive/2012/04/24/where-s-dxerr-lib.
 3. In Box project, set project properties. (Include Directories, Library Directories)
 4. Include d3d11.h file in "d3dUtil.h".
 
-    #include <d3d11.h>
+    `#include <d3d11.h>`
 5. Modify code of Line 40, DXTrace function call in "d3dUtil.h".
 
-    DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L#x, true);
+    `DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L#x, true);`
 6. Modify code of Line 310, DXTrace function call in "BoxDemo.cpp".
- 
-    DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);
+
+    `DXTrace((WCHAR*)__FILE__, (DWORD)__LINE__, hr, L"D3DX11CompileFromFile", true);`
 7. Compile and build it.
