@@ -8,12 +8,12 @@ When you use Frank D. Luna's "Introduction to 3D Game Programming using DirectX 
 Effects11d.lib (Debug) and Effects11.lib (Release) are dependent to Visual Studio version.
 If you use different version of Visual Studio, rebuild .lib using Effects11 project.
 
-References: https://fx11.codeplex.com/wikipage?title=Effects%2011
+References: https://github.com/microsoft/FX11
 
 ### Dxerr
 One of the little utility in the DirectX SDK is a static library for converting HRESULTs to text strings for debugging and diagnostics known as Dxerr.lib. There were once even older versions of this library, Dxerr8.lib and Dxerr9.lib, but they were removed from the DirectX SDK many years back in favor of a unified Dxerr.lib. The DirectX Error Lookup Utility is nothing more than a little front-end UI tool for getting results from Dxerr.lib.
 
-References: http://blogs.msdn.com/b/chuckw/archive/2012/04/24/where-s-dxerr-lib.aspx
+References: https://walbourn.github.io/wheres-dxerr-lib/
 
 ### Solutions ("Box" Example)
 1. Rebuild .lib (both Debug and Release) according to your Visual Studio version (located in "Libraries/Effects11/").
